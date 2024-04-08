@@ -1,11 +1,13 @@
-# What's My Flight Status?
+# What's My Flight Status?: Using Flight Data to Predict Flight Delays
 
 **Author**: Andre Layton  
 GitHub: @therookiescientist-andre
 
 ## Overview
 
+  The *Wall Street Journal* recently released their annual airlines rankings, where United Airlines dropped out of the top five. Now at \#6 due to a variety of issues, including recent plane troubles (i.e., the Boeing 737s over the last few years), the company’s executive team decided to tackle the issues with growing flight delays to regain consumer confidence. Flight delays are gradually increasing; they bring along financial difficulties and breed dissatisfaction from both passengers and carriers alike. In fact, according to the Bureau of Transportation Statistics, 20.25% of flights across all carriers were delayed in 2023, which is an increase from pre-pandemic levels (18.72% of flights in 2019). Obviously, for passengers, delays are a major inconvenience, and can create various travel issues that can deter passengers from booking through that airline in the future. For the carriers, delays can be quite expensive if we consider the reimbursements to passengers, tarmac fees when planes remain longer than scheduled, client compensation and accomodations if needed, and etc. The damage to the carrier's reputation is also a concern, which can directly impact sales and stock valuations. To resolve this issue, supervised learning models - machine learning algorithms and neural networks, specifically - were implemented to predict flight delays. 
   
+  ![Header picture from Unsplash](images/readme_header.jpg)
 
 ## Business Problem
 
