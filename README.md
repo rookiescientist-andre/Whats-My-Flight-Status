@@ -24,7 +24,7 @@ GitHub: @therookiescientist-andre
 
    ![Confusion Matrix](images/confusion_matrix.png)
 
-   The best determined model at predicting flight delays is the final neural network I built, with 30.3% precision. I used a stopping condition when training the model, and saved it as `best_model.h5`, which is also located in my repository. The visual above shows that out of the 72,867 predictions, 19,183 were false positives. This leaves much to be desired and room for improvement. Much of this can be attributed to the limitations I discuss in the next section. 
+   The best determined model at predicting flight delays is the final neural network I built, with 30.3% precision. My initial baseline model (prior to tuning) was only 24.5% precise - a slight improvement. I used a stopping condition when training the final model, and saved it as `best_model.h5`, which is also located in this repository. The visual above shows that out of the 72,867 predictions, 19,183 were false positives. This leaves much to be desired and room for improvement. Much of this can be attributed to the limitations I discuss in the next section. 
    
 ***
 ## Results & Conclusions
@@ -44,8 +44,16 @@ Further analyses could yield a more effective predictor, and possibly improve th
 
 ***
 ## Links & Reproducibility
-For those that would like to reproduce my analysis, or begin their own, here is a link to the original dataset, available on Kaggle:
+For those that would like to reproduce my analysis, or begin their own, here is a link to the original dataset, available on Kaggle.com:
 https://www.kaggle.com/datasets/threnjen/2019-airline-delays-and-cancellations/data
+
+This repository relies on the data from Kaggle.com. To download the datasets, first select the website link above. Click "Download" at the right corner. This will download one .zip file to your computer, and might take a couple of minutes depending on your download speed. Unzip the file using WindowsLinks, or any relevant utility for your computer. Then after unzipping you should see files named `full_data_flightdelay.csv`, `raw_data_documentation.txt`, `train.csv`, `test.csv`, and `train_sets_documentation.txt`. I worked with the first two files for my analysis, and deleted the remaining three; however, for anyone looking to start their own analysis, select and move the relevant files into the `data/` directory of this repository.
+
+[Notebook](/flight_status.ipynb)
+[Presentation](/presentation.pdf)
+
+***
+## Works Cited
 
 ***
 ## Repository Contents
@@ -56,6 +64,7 @@ Below is a list of the contents of this repository.
 ├── images   
 ├── .gitignore
 ├── PDF_deliverables                              
-├── flight_status.ipynb
-├── presentation.pdf                                                             
+├── environment.yml
+├── flight_status.ipynb   
+├── presentation.pdf 
 └── best_model.h5
