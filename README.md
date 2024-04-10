@@ -3,7 +3,8 @@
 **Author**: Andre Layton  
 GitHub: @therookiescientist-andre
 
-Final Notebook: [Notebook](/flight_status.ipynb)\n
+Final Notebook: [Notebook](/flight_status.ipynb)
+
 Presentation: [Presentation](/presentation.pdf)
 
 ## Overview
@@ -58,17 +59,17 @@ This repository relies on the data from Kaggle.com. To download the datasets, fi
   
   McAllister, D. G., Allison Pohle and Kevin. (n.d.). The Best and Worst Airlines of 2023. WSJ. https://www.wsj.com/lifestyle/travel/best-airlines-us-2023-36e9ea20
 
-  “Types of Delay - ASPMHelp.” Aspm.faa.gov, aspm.faa.gov/aspmhelp/index/Types_of_Delay.html.
+  “Types of Delay - ASPMHelp.” Aspm.faa.gov. aspm.faa.gov/aspmhelp/index/Types_of_Delay.html.
 ***
 ## Repository Contents
 Below is a list of the contents of this repository.
 
 ```
-├── README.md             
-├── images   
-├── .gitignore
-├── PDF_deliverables                              
-├── environment.yml
-├── flight_status.ipynb   
-├── presentation.pdf 
-└── best_model.h5
+├── images             
+├── PDF_deliverables  
+├── .gitignore 
+├── README.md                              
+├── best_model.h5
+├── environment.yml 
+├── flight_status.ipynb  
+└── presentation.pdf 
