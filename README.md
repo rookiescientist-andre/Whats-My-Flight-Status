@@ -78,6 +78,7 @@ Below is a list of the contents of this repository.
 ├── .gitignore 
 ├── README.md                              
 ├── best_model.pkl
+├── deep_learning_model.h5
 ├── environment.yml 
 ├── flight_status.ipynb  
 └── presentation.pdf 
