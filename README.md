@@ -35,7 +35,7 @@ Presentation: [Presentation](/presentation.pdf)
 ## Results & Conclusions
 This analysis leads to the following conclusions:
 
-   1. The neural networks performed better than the machine learning algorithms I tested in terms of precision, and is the algorithm I will utilize to improve my performance.
+   1. The machine learning model performed best, and is the analysis technique I will further apply to improve my performance.
 
    2. The model is exactly 27.2% precise when correctly classifying delayed flights.
 
@@ -45,7 +45,7 @@ Further analyses could yield a more effective model, and possibly improve the al
 
    1. Training my model with better, stronger hardware/computers.
    2. Gathering more data with an emphasis on balancing the minority class to avoid sampling.
-   3. Evaluating on different metrics to see how it impacts my model's performance.
+   3. Evaluating on different parameters to see how it impacts my model's performance.
    4. Gain more feedback from peers and analyze the model with other methods (i.e., the Gradient Boosting classifier)
 
 ***
@@ -74,7 +74,8 @@ Below is a list of the contents of this repository.
 
 ```
 ├── images             
-├── PDF_deliverables  
+├── PDF_deliverables
+├── .gitattributes
 ├── .gitignore 
 ├── README.md                              
 ├── best_model.pkl
