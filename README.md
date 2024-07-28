@@ -1,4 +1,4 @@
-# What's My Flight Status?: Using Flight Data to Predict Flight Delays
+# What's My Flight Status? Using Flight Data to Predict Flight Delays
 
 **Author**: Andre Layton  
 GitHub: @therookiescientist-andre
@@ -8,7 +8,7 @@ Final Notebook: [Notebook](/flight_status.ipynb)
 Presentation: [Presentation](/presentation.pdf)
 
 ## Overview
-  The *Wall Street Journal* recently released their annual airlines rankings, where United Airlines dropped out of the top five. (McAllister, 2024) Now at \#6 due to a variety of issues, including recent plane troubles (i.e., the Boeing 737s over the last few years), the company’s executive team decided to tackle the issues with growing flight delays to regain consumer confidence. I’ve been hired to create an algorithm that can predict flight delays, using flight data from Kaggle.com that contains airport, airline, and weather information. The aim is to deploy an app that consumers can use for better travel planning and take pre-emptive measures in flight delay situations. Using deep learning and neural networks, my model is 57.6% precise in classifying flights as delayed or not delayed, and will continue to be tuned to reduce the amount of false positive cases. 
+  The *Wall Street Journal* recently released their annual airlines rankings, where United Airlines dropped out of the top five. (McAllister, 2024) Now at \#6 due to a variety of issues, including recent plane troubles (i.e., the Boeing 737s over the last few years), the company’s executive team decided to tackle the issues with growing flight delays to regain consumer confidence. I’ve been hired to create an algorithm that can predict flight delays, using flight data from Kaggle.com that contains airport, airline, and weather information. The aim is to deploy an app that consumers can use for better travel planning and take pre-emptive measures in flight delay situations. Using machine learning, my model is 27.2% precise in classifying flights as delayed, and will continue to be tuned to reduce the amount of false positive cases, while increasing my truly delayed cases. 
   
   ![Header picture from Unsplash](images/readme_header.jpg)
 
@@ -25,27 +25,28 @@ Presentation: [Presentation](/presentation.pdf)
    
 ***
 ## Modeling
-   I begin modeling by cross-validating four baseline models, and evaluating them based on precision, recall, and f1 scores. My main focus is to improve precision, which affects the false positive count. The false positive count, in this case, represents the number of on-time flights predicted as delays. This is crucial because if not addressed properly, the model could spread misinformation, and lead to passengers missing their on-time flights. This would lead to further consumer disapproval, and hurt the company's sales and reputation. However, I will still track the recall score (or the number of false negatives), and the f1 score, which is the harmonic mean of precision and recall. The baseline model with the best trio of average metric scores will be selected to undergo hyperparameter tuning and further evaluation. I will take that baseline model and tune the hyperparameters for optimal performance, then evaluate based on those optimal parameters. I also take a look into neural networks, and utilizing deep learning methods to possibly achieve the "best" model. I will use the scores and confusion matrices as performance measures to select the final model. 
+   I begin modeling by cross-validating four baseline models, and evaluating them based on precision, recall, and f1 scores. My main focus is to improve precision, which affects the false positive count. The false positive count, in this case, represents the number of on-time flights predicted as delays. This is crucial because if not addressed properly, the model could spread misinformation, and lead to passengers missing their on-time flights. This would lead to further consumer disapproval, and hurt the company's sales and reputation. However, I will still track the recall score (or the number of false negatives), and the f1 score, which is the harmonic mean of precision and recall. The baseline model with the best trio of average metric scores will be selected to undergo hyperparameter tuning and further evaluation. I will take that baseline model and tune the hyperparameters for optimal performance, then evaluate based on those optimal parameters. I also take a look into neural networks, and apply deep learning methods to possibly achieve the "best" model. I will use the scores and confusion matrices as performance measures to select the final model. 
 
    ![Confusion Matrix](images/confusion_matrix.png)
 
-   The best determined model at predicting flight delays is the final neural network I built, with 57.6% precision. My initial neural network (prior to tuning) was only 47.2% precise; and the Random Forest classifier I performed a grid search on (and refit based on those optimal parameters) was 50.0% precise. I used a stopping condition when training the final model, and saved it as `best_model.h5`, which is also located in this repository. The visual above shows that out of the 72,867 predictions, 694 were false positives. there is still an issue in predicting true positive cases (correctly predicting delays), which leaves much to be desired and room for improvement. Much of this can be attributed to the limitations I discuss in the next section. 
+   I determined the best model at predicting flight delays was the machine learning model I built, with 58.0% precision. My initial neural network (prior to tuning) was only 34.0% precise; but after tuning, increased to 45.8%. I used a stopping condition when training the final model, and saved it as `deep_learning_model.h5`, which is also located in this repository. With my Random Forest algorithm producing the highest precision, I pickle that model - saved as `best_model.pkl` - and evaluate my test data. The visual above shows that out of the 72,867 predictions, 6,127 were false positive cases, while the true delay cases were approximately 2,200. There is still an issue in predicting delays, which leaves much to be desired and room for improvement. Much of this can be attributed to the limitations I discuss in the next section. 
    
 ***
 ## Results & Conclusions
 This analysis leads to the following conclusions:
 
-   1. The neural networks performed better than the machine learning algorithms I tested in terms of precision, and is the path I will explore further as I aim to improve my performance.
+   1. The neural networks performed better than the machine learning algorithms I tested in terms of precision, and is the algorithm I will utilize to improve my performance.
 
-   2. The model is 57.6% precise when testing and classifying flights as delayed or not delayed.
+   2. The model is exactly 27.2% precise when correctly classifying delayed flights.
 
-This project is limited in a few ways. First and foremost, I built my models under heavy computational constraints. Given the nature of the data, it is necessary to train models on computers that can process large and full datasets in quicker time. For example, the grid search I performed earlier took almost 3 hours to run, which hinders me from further testing and modifications. Another drawback is the class imbalance. I applied sampling methods to augment the minority class, which gave me more data to work with, but also increased my run times. Therefore, gathering more data that fall in the minority class would greatly improve my precision. Lastly, and this ties with my computational constraints, I could have used a wider range of hyperparameters to perform my grid search with. Unfortunately, with limited resources, it would have taken me hours or even days to fully perform this search. However, if I had, I could have found a better set of hyperparameters that would improve my metrics and predictions.
+This project is limited in a few ways. First and foremost, I built my models under heavy computational constraints. Given the nature of the data, it is necessary to train models on computers that can process larger and fuller datasets in quicker time. For example, the grid search I performed earlier took almost 3 hours to run, despite a thin parameter grid. With improved hardware, I could use that same amount of time but apply techniques, like creating a better (more complete) parameter grid or analyzing larger data, to improve the model's performance. Another drawback is the class imbalance. I applied sampling methods to augment the minority class, which gave me more data to work with, but also increased my run times. Therefore, gathering more data that fall in the minority class would greatly improve my precision. Lastly, and this ties with my computational constraints, I mentioned I could have used a wider range of hyperparameters to perform my grid search with. Unfortunately, with limited resources, it would have taken me hours or even days to fully perform this search. However, I could have found a better set of hyperparameters that would improve my metrics and predictions.
 
-Further analyses could yield a more effective predictor, and possibly improve the algorithm's performance. Some possible courses of action I could take include:
+Further analyses could yield a more effective model, and possibly improve the algorithm's performance to the point where I push to market. Some possible courses of action I could take include:
 
-   1. Training my model with better, stronger computer(s).
+   1. Training my model with better, stronger hardware/computers.
    2. Gathering more data with an emphasis on balancing the minority class to avoid sampling.
    3. Evaluating on different metrics to see how it impacts my model's performance.
+   4. Gain more feedback from peers and analyze the model with other methods (i.e., the Gradient Boosting classifier)
 
 ***
 ## Links & Reproducibility
@@ -76,7 +77,7 @@ Below is a list of the contents of this repository.
 ├── PDF_deliverables  
 ├── .gitignore 
 ├── README.md                              
-├── best_model.h5
+├── best_model.pkl
 ├── environment.yml 
 ├── flight_status.ipynb  
 └── presentation.pdf 
